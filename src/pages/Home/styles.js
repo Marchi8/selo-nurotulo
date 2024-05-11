@@ -8,9 +8,10 @@ const Main = styled.main`
   justify-content: center;
 
   .productImg {
-    width: 75px;
+    width: 90px;
     height: 99px;
     border-radius: 15px;
+    background-color: #ffffff;
   }
 `;
 

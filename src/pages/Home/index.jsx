@@ -10,12 +10,29 @@ import LoadingSpinner from '../../components/Loading';
 function Product() {
 
   const [apiProduct,setApiProduct] = useState({})
+  const [relatedProducts, setRelatedProducts] = useState([]);
   const { gtin } = useParams();
 
-  const getProduct = async ()=>{
+  const getProduct = async () => {
     await axios.get(`https://api.nurotulo.app/api:P0c5c7Xy/product/${gtin.substring(1)}`)
-    .then(res=>setApiProduct(res.data))
+    .then(res=>{
+      setApiProduct(res.data)
+      getRelated(res.data.related)
+    })
     .catch(err=>console.log('produto não encontrado /',err))
+  }
+
+  const getRelated = async(related) => {
+    const relatedProductsData = [];
+      for (const ean of related) {
+        try {
+          const response = await axios.get(`https://api.nurotulo.app/api:P0c5c7Xy/product/${ean}`);
+          relatedProductsData.push(response.data);
+        } catch (error) {
+          console.error(`Erro ao buscar o produto ${ean}:`, error);
+        }
+      }
+      setRelatedProducts(relatedProductsData);
   }
 
   useEffect(()=>{
@@ -46,15 +63,18 @@ function Product() {
 
         <div>
           <div style={{display:'flex',gap:24,marginBottom:30}}>
-            <img style={{width:65,height:86,borderRadius:15}} src={apiProduct?.photo?.url} alt="product suggestion image" />
-            <img style={{width:65,height:86,borderRadius:15}} src={apiProduct?.photo?.url} alt="product suggestion image" />
-            <img style={{width:65,height:86,borderRadius:15}} src={apiProduct?.photo?.url} alt="product suggestion image" />
+            {relatedProducts.length?
+            relatedProducts.map((product,index)=>(
+              <button key={index} style={{width:65,height:86,borderRadius:15,backgroundColor:'#FFFFFF', display:'flex', alignItems:'center',justifyContent:'center'}}>
+                <img style={{width:65,height:86,borderRadius:15,backgroundColor:'#FFFFFF'}} src={product?.photo?.url} alt="product suggestion image" />
+              </button>
+            )) : null}
           </div>
 
           <div style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
             <img src={ClickHereLogo} alt="Click here logo" />
-            <button style={{backgroundColor:'#FFFFFF', width:80,height:80,borderRadius:100, border:'2px solid white',display:'flex',alignItems:'center',justifyContent:'center'}}>
-              <img style={{width:80,height:80, borderRadius:100,}}  src={apiProduct?.photo?.url} alt="Company logo" />
+            <button style={{backgroundColor:'#FFFFFF', width:85,height:85,borderRadius:100, border:'2px solid white',display:'flex',alignItems:'center',justifyContent:'center'}}>
+              <img style={{width:80,height:80, borderRadius:100,}}  src={apiProduct?.siteLogo?.url} alt="Company logo" />
             </button>
           </div>
         </div>

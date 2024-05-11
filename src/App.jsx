@@ -5,7 +5,7 @@ import Product from './pages/Home';
 function App() {
   return (
     <div className="App">
-      <Routes>
+      <Routes basename="/01">
         <Route path="/:gtin" element={ <Product/> }/>
       </Routes>
     </div>

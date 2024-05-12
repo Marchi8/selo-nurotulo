@@ -2,7 +2,6 @@ import './App.css'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Main from './home';
-import { Link } from 'react-router-dom';
 import LoadingSpinner from './LoadingSpinner';
 import HomeLogo from '../src/HomeLogo.svg';
 import CertifiedLogo from '../src/CertifiedLogo.svg';
@@ -35,6 +34,10 @@ function App() {
       }
       setRelatedProducts(relatedProductsData);
   }
+
+  const handleClick = (ean) => {
+    window.location.href = `https://nurotulo.app/01/0${ean}`;
+  };
 
   useEffect(()=>{
     getProduct()
@@ -70,9 +73,9 @@ function App() {
           <div style={{display:'flex',gap:24,marginBottom:30}}>
             {relatedProducts.length?
             relatedProducts.map((product,index)=>(
-              <Link to={'/0'+product.ean} key={index} style={{width:65,height:86,borderRadius:15,backgroundColor:'#FFFFFF', display:'flex', alignItems:'center',justifyContent:'center'}}>
+              <button onClick={() => handleClick(product.ean)} key={index} style={{width:65,height:86,borderRadius:15,backgroundColor:'#FFFFFF', display:'flex', alignItems:'center',justifyContent:'center'}}>
                 <img style={{width:65,height:86,borderRadius:15,backgroundColor:'#FFFFFF'}} src={product?.photo?.url} alt="product suggestion image" />
-              </Link>
+              </button>
             )) : null}
           </div>
 

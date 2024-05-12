@@ -12,6 +12,13 @@
 </head>
 
 <body>
+
+  <script>
+    if (window.location.href.includes("/01/") && !window.location.hash) {
+      window.location.href = window.location.href.replace("/01/", "/01/#");
+    }
+  </script>
+
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>

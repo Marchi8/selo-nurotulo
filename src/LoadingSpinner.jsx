@@ -1,5 +1,5 @@
-import LoadingBackdrop from './styles';
-import LoadingLogo from '../../assets/LoadingLogo.svg'
+import LoadingBackdrop from './spinner';
+import LoadingLogo from '../src/LoadingLogo.svg';
 
 function LoadingSpinner() {
   return (

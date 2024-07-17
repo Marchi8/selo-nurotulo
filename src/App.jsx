@@ -50,7 +50,7 @@ function App() {
       </Routes> */}
       <Main>
       {apiProduct.photo?  
-        <div style={{marginTop:70,display:'flex',alignItems:'center',justifyContent:'flex-start',flexDirection:'column',maxWidth:342,width:'90vw'}}>
+        <div style={{marginTop:70,display:'flex',alignItems:'center',justifyContent:'flex-start',flexDirection:'column',maxWidth:342,width:'90vw',paddingBottom: 55}}>
         <img style={{position:'relative',top:-20}} src={HomeLogo} alt="NuRótulo Logo" />
         <div style={{display:'flex',flexDirection:'row', alignItems:'center',marginBottom:10,}}>
           <img className='productImg' src={apiProduct?.photo?.url} alt="product image" />
@@ -66,7 +66,7 @@ function App() {
             <h4 style={{fontSize:13,maxWidth:330,fontWeight:'500'}}>DATA DE EMISSÃO: {apiProduct.valid}.</h4>
             <h4 style={{fontSize:13,maxWidth:330,fontWeight:'500'}}>Este RÓTULO passou por curadoria referente às boas práticas de rotulagem, conforme legislação vigente, e foi APROVADO.</h4>
             <h4 style={{fontSize:13,maxWidth:330,fontWeight:'500'}}>O Selo ESG de Integridade do Rótulo é um certificado de responsabilidade social.</h4>
-            <h4 style={{fontSize:13,maxWidth:330,fontWeight:'500'}}>Encontre esse produto e produtos similares, direto na LOJA VIRTUAL e receba na sua casa.</h4>
+            {/* <h4 style={{fontSize:13,maxWidth:330,fontWeight:'500'}}>Encontre esse produto e produtos similares, direto na LOJA VIRTUAL e receba na sua casa.</h4> */}
         </div>
 
         <div>

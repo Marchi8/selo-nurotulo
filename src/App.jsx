@@ -11,7 +11,7 @@ function App() {
   const [apiProduct,setApiProduct] = useState({})
   const [relatedProducts, setRelatedProducts] = useState([]);
   // const { gtin } = useParams();
-  const gtin = window.location.hash
+  const gtin = window.location.hash;
 
   const getProduct = async () => {
     await axios.get(`https://api.nurotulo.app/api:P0c5c7Xy/product/${gtin.substring(2)}`)
@@ -20,7 +20,7 @@ function App() {
       getRelated(res.data.related)
     })
     .catch(err=>console.log('produto não encontrado /',err))
-  }
+  };
 
   const getRelated = async(related) => {
     const relatedProductsData = [];
@@ -33,7 +33,7 @@ function App() {
         }
       }
       setRelatedProducts(relatedProductsData);
-  }
+  };
 
   const handleClick = (ean) => {
     window.location.href = `https://nurotulo.app/01/0${ean}`;
@@ -41,7 +41,7 @@ function App() {
 
   useEffect(()=>{
     getProduct()
-  },[gtin])
+  },[gtin]);
 
   return (
     <div className="App">

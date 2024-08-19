@@ -5,7 +5,7 @@ import Main from './home';
 import LoadingSpinner from './LoadingSpinner';
 import HomeLogo from '../src/HomeLogo.svg';
 import CertifiedLogo from '../src/CertifiedLogo.svg';
-import ClickHereLogo from '../src/ClickHereLogo.svg';
+// import ClickHereLogo from '../src/ClickHereLogo.svg';
 
 function App() {
   const [apiProduct,setApiProduct] = useState({})
@@ -52,20 +52,15 @@ function App() {
           <div className="product-info">
             <img className="productImg" src={apiProduct?.photo?.url} alt="product image" />
             <div className="product-details">
-              <p className="title">RÓTULO CERTIFICADO</p>
-              <p className="details">DATA DE EMISSÃO: {apiProduct.valid}.</p>
               <p className="details">{apiProduct?.name}</p>
+              <p className="title">RÓTULO CERTIFICADO!</p>
+              <p className="details">DATA DE EMISSÃO: {apiProduct.valid}.</p>
             </div>
             <img className="certifiedLogo" src={CertifiedLogo} alt="Certified Logo" />
           </div>
 
-          <div className="description">
-            <h4 className="details">DATA DE EMISSÃO: {apiProduct.valid}.</h4>
-            <h4 className="details">Este RÓTULO passou por curadoria referente às boas práticas de rotulagem, conforme legislação vigente, e foi APROVADO.</h4>
-            <h4 className="details">O Selo ESG de Integridade do Rótulo é um certificado de responsabilidade social.</h4>
-          </div>
-
           <div>
+              <p>Veja outros produtos similares da própria MARCA</p>
             <div className="related-products">
               {relatedProducts.length ?
               relatedProducts.map((product, index) => (
@@ -76,12 +71,25 @@ function App() {
             </div>
 
             <div className="click-here">
-              <img src={ClickHereLogo} alt="Click here logo" />
-              <a href={apiProduct.site} target="_blank" rel="noopener noreferrer" className="click-here-button">
+              {/* <img src={ClickHereLogo} alt="Click here logo" /> */}
+
+              {/* <a href={apiProduct.site} target="_blank" rel="noopener noreferrer" className="click-here-button">
                 <img className="site-logo" src={apiProduct?.siteLogo?.url} alt="Company logo" />
+              </a> */}
+              <a href={apiProduct.site} target="_blank" rel="noopener noreferrer" className="click-here-button">
+            <p>Ir à loja virtual</p>
               </a>
             </div>
           </div>
+
+          <div className="description">
+            <h4 className="details">Este RÓTULO passou por curadoria referente às boas práticas de rotulagem, conforme legislação vigente, e foi APROVADO.</h4>
+          </div>
+
+          <div className="description">
+            <h4 className="details">O Selo ESG de Integridade do Rótulo é um certificado de responsabilidade social.</h4>
+          </div>
+
         </div>
       :  <LoadingSpinner />}
     </Main>

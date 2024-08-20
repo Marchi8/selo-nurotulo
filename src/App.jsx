@@ -9,6 +9,12 @@ import HomeLogo from '../src/HomeLogo.svg';
 import ClickHereButtonLogo from '../src/ClickHereButtonLogo.svg';
 import CertifiedBackground from '../src/CertifiedBackground.svg';
 import CertifiedText from '../src/CertifiedText.svg';
+import AprovedImg from '../src/AprovedImg.svg';
+import ESGimage from '../src/ESGimage.svg';
+import Downloadimage from '../src/Downloadimage.svg';
+import AppleDownload from '../src/AppleDownload.svg';
+import AndroidDownload from '../src/AndroidDownload.svg';
+// import AboutBG1 from '../src/AboutBG1.svg';
 
 function App() {
   const [apiProduct,setApiProduct] = useState({})
@@ -51,7 +57,9 @@ function App() {
     <Main>
       {apiProduct.photo ?  
         <div className="container">
-          <img className="logo" src={HomeLogo} alt="NuRótulo Logo" />
+          <div className="logoContainer">
+            <img className="logo" src={HomeLogo} alt="NuRótulo Logo" />
+          </div>
           
           <div className="productInfo">
          
@@ -98,15 +106,40 @@ function App() {
             </button>
           </div>
 
-          {/* <div className="description">
-            <h4 className="">Este RÓTULO passou por curadoria referente às boas práticas de rotulagem, conforme legislação vigente, e foi APROVADO.</h4>
+
+
+          <div className="aboutContainer">
+           
+            {/* <img src={AboutBG1} alt="" /> */}
+            
+            <div className="aprovedAbout">
+              <img src={AprovedImg} alt="" />
+              <h4 className="">Este RÓTULO passou por curadoria referente às boas práticas de rotulagem, conforme legislação vigente, e foi APROVADO.</h4>
+            </div>
+
+            <div className="esgAbout">
+              <img src={ESGimage} alt="" />
+              <h4 className="">O Selo ESG de Integridade do Rótulo é um certificado de responsabilidade social.</h4>
+            </div>
+
+            <div className="dowloandAbout">
+              <img src={Downloadimage} alt="" />
+
+              <div className="downlaodButtonsContainer">  
+                <button onClick={() =>  window.open("https://apps.apple.com/br/app/nur%C3%B3tulo/id1522091609", '_blank')} className="appleButton">
+                  <img src={AppleDownload} alt="" />
+                </button>
+
+                <button onClick={() => window.open("https://play.google.com/store/apps/details?id=br.com.nurotulo.mobile&hl=pt_BR&gl=US", '_blank')} className="androidButton">
+                  <img src={AndroidDownload} alt="" />
+                </button>
+              </div>
+
+            </div>
           </div>
 
-          <div className="description">
-            <h4 className="">O Selo ESG de Integridade do Rótulo é um certificado de responsabilidade social.</h4>
-          </div> */}
-
         </div>
+
       :  <LoadingSpinner />}
     </Main>
   </div>

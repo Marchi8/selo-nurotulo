@@ -4,8 +4,11 @@ import axios from 'axios';
 import Main from './home';
 import LoadingSpinner from './LoadingSpinner';
 import HomeLogo from '../src/HomeLogo.svg';
-import CertifiedLogo from '../src/CertifiedLogo.svg';
+// import CertifiedLogo from '../src/CertifiedLogo.svg';
 // import ClickHereLogo from '../src/ClickHereLogo.svg';
+import ClickHereButtonLogo from '../src/ClickHereButtonLogo.svg';
+import CertifiedBackground from '../src/CertifiedBackground.svg';
+import CertifiedText from '../src/CertifiedText.svg';
 
 function App() {
   const [apiProduct,setApiProduct] = useState({})
@@ -49,46 +52,59 @@ function App() {
       {apiProduct.photo ?  
         <div className="container">
           <img className="logo" src={HomeLogo} alt="NuRótulo Logo" />
-          <div className="product-info">
+          
+          <div className="productInfo">
+         
+            <div className="productImgContainer">
             <img className="productImg" src={apiProduct?.photo?.url} alt="product image" />
-            <div className="product-details">
-              <p className="details">{apiProduct?.name}</p>
-              <p className="title">RÓTULO CERTIFICADO!</p>
-              <p className="details">DATA DE EMISSÃO: {apiProduct.valid}.</p>
             </div>
-            <img className="certifiedLogo" src={CertifiedLogo} alt="Certified Logo" />
+            
+            <div className="productDetails">
+              <p className="details">{apiProduct?.name}</p>
+              {/* <p className="details">Farinha de arroz, 1kg</p> */}
+              <p className="title">RÓTULO CERTIFICADO!</p>
+              <p className="date">DATA DE EMISSÃO: {apiProduct.valid}.</p>
+              
+              <div className="certifiedContainer">
+                <img src={CertifiedBackground} alt="" className="certifiedBackground"/>
+                <img src={CertifiedText} alt=""  className="certifiedText"/>
+              </div>
+            
+            </div>
+
           </div>
 
-          <div>
-              <p>Veja outros produtos similares da própria MARCA</p>
-            <div className="related-products">
+          <div className="relatedProductsContainer">
+            <p className="relatedProductsTitle">Veja outros produtos similares da própria MARCA</p>
+            
+            <div className="relatedProducts">
               {relatedProducts.length ?
               relatedProducts.map((product, index) => (
-                <button onClick={() => handleClick(product.ean)} key={index} className="related-product-button">
-                  <img className="related-product-img" src={product?.photo?.url} alt="product suggestion image" />
+                <button onClick={() => handleClick(product.ean)} key={index} className="relatedProductButton">
+                  <img className="relatedProductImg" src={product?.photo?.url} alt="product suggestion image" />
                 </button>
               )) : null}
             </div>
 
-            <div className="click-here">
-              {/* <img src={ClickHereLogo} alt="Click here logo" /> */}
+            <button onClick={() => window.open(apiProduct.site, '_blank')} 
+              className="clickHereContainer">
+        
+              <div className="clickHereButton">
+                <p>Ir à loja virtual</p>
+              </div>
 
-              {/* <a href={apiProduct.site} target="_blank" rel="noopener noreferrer" className="click-here-button">
-                <img className="site-logo" src={apiProduct?.siteLogo?.url} alt="Company logo" />
-              </a> */}
-              <a href={apiProduct.site} target="_blank" rel="noopener noreferrer" className="click-here-button">
-            <p>Ir à loja virtual</p>
-              </a>
-            </div>
+              <img src={ClickHereButtonLogo} alt="" />
+           
+            </button>
+          </div>
+
+          {/* <div className="description">
+            <h4 className="">Este RÓTULO passou por curadoria referente às boas práticas de rotulagem, conforme legislação vigente, e foi APROVADO.</h4>
           </div>
 
           <div className="description">
-            <h4 className="details">Este RÓTULO passou por curadoria referente às boas práticas de rotulagem, conforme legislação vigente, e foi APROVADO.</h4>
-          </div>
-
-          <div className="description">
-            <h4 className="details">O Selo ESG de Integridade do Rótulo é um certificado de responsabilidade social.</h4>
-          </div>
+            <h4 className="">O Selo ESG de Integridade do Rótulo é um certificado de responsabilidade social.</h4>
+          </div> */}
 
         </div>
       :  <LoadingSpinner />}

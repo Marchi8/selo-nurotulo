@@ -7,12 +7,12 @@ const Main = styled.main`
   align-items: flex-start;
   justify-content: center;
 
-  .productImg {
+  /* .productImg {
     width: 90px;
     height: 99px;
     border-radius: 15px;
     background-color: #ffffff;
-  }
+  } */
 `;
 
 export default Main;

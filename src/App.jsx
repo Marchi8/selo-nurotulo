@@ -33,6 +33,7 @@ function App() {
 
   const getRelated = async(related) => {
     const relatedProductsData = [];
+
       for (const ean of related) {
         try {
           const response = await axios.get(`https://api.nurotulo.app/api:P0c5c7Xy/product/${ean}`);
@@ -106,8 +107,6 @@ function App() {
             </button>
           </div>
 
-
-
           <div className="aboutContainer">
            
             {/* <img src={AboutBG1} alt="" /> */}
@@ -139,7 +138,6 @@ function App() {
           </div>
 
         </div>
-
       :  <LoadingSpinner />}
     </Main>
   </div>

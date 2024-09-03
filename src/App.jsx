@@ -58,6 +58,8 @@ function App() {
     <Main>
       {apiProduct.photo ?  
         <div className="container">
+
+          <div className="contentContainer">
           <div className="logoContainer">
             <img className="logo" src={HomeLogo} alt="NuRótulo Logo" />
           </div>
@@ -105,6 +107,7 @@ function App() {
               <img src={ClickHereButtonLogo} alt="" />
            
             </button>
+          </div>
           </div>
 
           <div className="aboutContainer">

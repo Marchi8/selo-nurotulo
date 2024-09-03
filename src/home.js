@@ -7,6 +7,9 @@ const Main = styled.main`
   align-items: flex-start;
   justify-content: center;
 
+  @media (min-width: 1200px) {
+    justify-content: space-between;
+  }
   /* .productImg {
     width: 90px;
     height: 99px;

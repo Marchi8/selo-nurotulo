@@ -50,6 +50,13 @@
   margin-top: 10px;
   margin-bottom: 18px;
 
+  @media (min-width: 650px) {
+    width: 90vw;
+    max-width: 564px;
+    height: 172px;
+    margin-bottom: 45px;
+  }
+
   @media (min-width: 1200px) {
     width: 458.89px;
     height: 140px;
@@ -83,6 +90,11 @@
   align-items: center;
   justify-content: center;
 
+  @media (min-width: 650px) {
+    width: 224.33px;
+    height: 223.57px;
+  }
+
   @media (min-width: 1200px) {
     width: 212px;
     height: 211px;
@@ -92,6 +104,11 @@
 .productImg {
   width: 91.38px;
   height: 112.66px;
+
+  @media (min-width: 650px) {
+    width: 136.66px;
+    height: 168.48px;
+  }
 
   @media (min-width: 1200px) {
     width: 129px;
@@ -120,6 +137,12 @@
   line-height: 25.08px;
   max-width: 169px;
 
+  @media (min-width: 650px) {
+    font-size: 35.55px;
+    margin-bottom: 15px;
+    line-height: 37.51px;
+  }
+
   @media (min-width: 1200px) {
     font-size: 33.52px;
     margin-bottom: 10px;
@@ -133,6 +156,14 @@
   font-size: 12.52px;
   line-height: 18.78px;
   text-align: left;
+
+  @media (min-width: 650px) {
+    font-size: 18.72px;
+    max-width: 250px;
+    margin-bottom: 15px;
+    margin-top: -20px;
+    line-height: 28.08px;
+  }
 
   @media (min-width: 1200px) {
     font-size: 17.66px;
@@ -148,6 +179,11 @@
   font-weight: 600;
   line-height: 14.09px;
   text-align: left;
+
+  @media (min-width: 650px) {
+    font-size: 14.05px;
+    margin-bottom: 10px;
+  }
 
   @media (min-width: 1200px) {
     font-size: 13.25px;
@@ -165,16 +201,25 @@
 .certifiedBackground {
   background-color: #FFFFFF;
 
+  @media (min-width: 650px) {
+    width: 243.62px;
+  }
+
   @media (min-width: 1200px) {
     width: 230px;
   }
 }
 
 .certifiedText {
-  background-color: #FFFFFF;
   position: relative;
   left: -3.3px;
   top: -48px;
+
+  @media (min-width: 650px) {
+    width: 218.34px;
+    top: -70px;
+    left: 8px;
+  }
 
   @media (min-width: 1200px) {
     width: 205px;
@@ -204,6 +249,12 @@
   font-weight: 600;
   line-height: 18px;
   margin-bottom: 20px;
+
+  @media (min-width: 650px) {
+    font-size: 14.89px;
+    max-width: 278px;
+    text-align: left;
+  }
 
   @media (min-width: 1200px) {
     font-size: 16.92px;
@@ -235,6 +286,11 @@
   align-items: center;
   justify-content: center;
 
+  @media (min-width: 650px) {
+    width: 82.54px;
+    height: 82.54px;
+  }
+
   @media (min-width: 1200px) {
     width: 112.83px;
     height: 112.45px;
@@ -244,6 +300,11 @@
 .relatedProductImg {
   width: 48.74px;
   height: 60.08px;
+
+  @media (min-width: 650px) {
+    width: 50.29px;
+    height: 61.99px;
+  }
 
   @media (min-width: 1200px) {
     width: 68.73px;
@@ -261,6 +322,11 @@
   align-items: center;
   justify-content: center;
   border: 1px solid #36BFE8;
+
+  @media (min-width: 650px) {
+    width: 271.31px;
+    height: 43.63px;
+  }
 
   img {
     position: relative;
@@ -306,7 +372,6 @@
   flex-direction: column;
   gap: 15px;
 
-
   h4 {
     font-size: 12px;
     font-weight: 600;
@@ -314,9 +379,19 @@
     width: 149px;
     margin-right: 15px;
 
+    @media (min-width: 650px) {
+      font-size: 24px;
+      width: 452px;
+      line-height: 36px;
+    }
+
     @media (min-width: 1200px) {
       font-size: 18px;
     }
+  }
+
+  @media (min-width: 650px) {
+    gap: 35px;
   }
 
   @media (min-width: 1200px) {
@@ -345,12 +420,26 @@
     left: -20px;
     margin-right: -10px;
 
+    @media (min-width: 650px) {
+      width: 298.42px;
+      height: 283.96px;
+      top: -30px;
+      left: -69px;
+    }
+
     @media (min-width: 1200px) {
       width: 298.42px;
       height: 283.96px;
       top: -29px;
       left: -55px;
     }
+  }
+
+  @media (min-width: 650px) {
+    max-width: 858px;
+    height: 223.22px;
+    margin-top: 35px;
+    border-radius: 10px;
   }
 
   @media (min-width: 1200px) {
@@ -376,6 +465,14 @@
     width: 164.08px;
     height: 161.47px;
 
+    @media (min-width: 650px) {
+      width: 269px;
+      height: 264px;
+      position: relative;
+      top: 5px;
+      left: -40px;
+    }
+
     @media (min-width: 1200px) {
       width: 235.98px;
       height: 232.22px;
@@ -384,6 +481,12 @@
       top: 5px;
       left: -40px;
     }
+  }
+
+  @media (min-width: 650px) {
+    max-width: 858px;
+    height: 223.22px;
+    border-radius: 10px;
   }
 
   @media (min-width: 1200px) {
@@ -409,10 +512,24 @@
   }
 
   img {
+    @media (min-width: 650px) {
+      width: 260px;
+      height: 171.02px;
+      /* position: relative; */
+      /* top: 5px; */
+      /* left: -40px; */
+    }
+
     @media (min-width: 1200px) {
       width: 212.51px;
       height: 139.49px;
     }
+  }
+
+  @media (min-width: 650px) {
+    max-width: 858px;
+    height: 223.22px;
+    border-radius: 10px;
   }
 
   @media (min-width: 1200px) {
@@ -432,9 +549,20 @@
   justify-content: center;
   gap: 8px;
 
+  @media (min-width: 650px) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 25px;
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+
   @media (min-width: 1200px) {
     justify-content: center;
+    flex-direction: column;
     width: fit-content;
+    margin: 0;
+    gap: 8px;
   }
 }
 
@@ -444,6 +572,14 @@
   height: 44.92px !important;
   margin: 0;
   padding: 0;
+
+  @media (min-width: 650px) {
+    width: 217.88px !important;
+    height: 65px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   @media (min-width: 1200px) {
     width: 222.82px !important;
@@ -461,12 +597,22 @@
   margin: 0;
   padding: 0;
 
+  @media (min-width: 650px) {
+    width: 214.4px !important;
+    height: 61.26px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25px;
+  }
+
   @media (min-width: 1200px) {
     width: 222.82px !important;
     height: 64.6px !important;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
   }
 }
 

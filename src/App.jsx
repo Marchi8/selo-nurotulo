@@ -54,7 +54,7 @@ function App() {
   };
 
   const handleClick = (ean) => {
-    window.location.href = `https://nurotulo.app/01/0${ean}`;
+    window.location.href = `https://cert.nurotulo.app/01/0${ean}`;
   };
 
   useEffect(() => {
